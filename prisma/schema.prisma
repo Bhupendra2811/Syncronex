@@ -11,7 +11,7 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid())
+  id        String   @id @default(uuid()) @map("_id")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   email     String   @unique
@@ -24,7 +24,7 @@ model User {
 }
 
 model Project {
-  id        String   @id @default(uuid())
+  id        String   @id @default(uuid()) @map("_id")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -48,18 +48,18 @@ enum TASK_STATUS {
 }
 
 model Task {
-  id        String      @id @default(uuid())
-  createdAt DateTime    @default(now())
-  updatedAt DateTime    @updatedAt
-  name      String
-  status    TASK_STATUS @default(NOT_STARTED)
-  ownerId   String
-  owner     User        @relation(fields: [ownerId], references: [id])
-  projectId String
+  id          String      @id @default(uuid()) @map("_id")
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  name        String
+  status      TASK_STATUS @default(NOT_STARTED)
+  ownerId     String
+  owner       User        @relation(fields: [ownerId], references: [id])
+  projectId   String
   description String?
-  due       DateTime?
-  project   Project     @relation(fields: [projectId], references: [id])
-  deleted   Boolean     @default(false)
+  due         DateTime?
+  project     Project     @relation(fields: [projectId], references: [id])
+  deleted     Boolean     @default(false)
 
   @@index([ownerId])
 }
