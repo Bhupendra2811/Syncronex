@@ -11,7 +11,7 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid()) @map("_id")
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   email     String   @unique
@@ -24,7 +24,7 @@ model User {
 }
 
 model Project {
-  id        String   @id @default(uuid()) @map("_id")
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -48,7 +48,7 @@ enum TASK_STATUS {
 }
 
 model Task {
-  id          String      @id @default(uuid()) @map("_id")
+  id          String      @id @default(uuid())
   createdAt   DateTime    @default(now())
   updatedAt   DateTime    @updatedAt
   name        String
