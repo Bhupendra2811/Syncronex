@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-https://www.notion.so/Javascript-Core-Concept-00be3bfd86cb4919a341336e8a460e8c?pvs=4
+https://www.notion.so/React-Helper-005c12cfc03242e2b95524461eb145fc
 
 ## Getting Started
 
